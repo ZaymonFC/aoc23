@@ -12,3 +12,5 @@
       (= n 1) (flatten [xs xs])
       (= n 2) xs
       (> n 2) [(first xs) (last xs)])))
+
+(defn parse-int [s] (Integer/parseInt s))
