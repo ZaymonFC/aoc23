@@ -57,10 +57,12 @@
      (apply +))
 
 ;; part 2
-(->> input
-     (map find-numbers)
-     (map first-and-last)
-     (map (partial apply str))
-     (map (fn [n] (Integer/parseInt n)))
-     (apply +))
+(defn transform [x]
+  (->> x
+       find-numbers
+       first-and-last
+       (apply str)
+       (Integer/parseInt)))
+
+(->> input (map transform) (apply +))
 
